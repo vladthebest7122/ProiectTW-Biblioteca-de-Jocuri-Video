@@ -34,11 +34,11 @@ Deschide `index.html` într-un browser. Fără pași de compilare (build), făr�
 
 | ID | Cerință (Requirement) | Unde se află (Where - permalink) | Cum se verifică (How to check) |
 | :--- | :--- | :--- | :--- |
-| S1-R1 | README: descriere, câmpuri, date de test, rulare | [README.md](AICI_PUI_PERMALINK_CATRE_SECTIUNILE_DIN_README) | citire |
-| S1-R2 | Secțiunea AI usage | [README.md](AICI_PUI_PERMALINK_CATRE_SECTIUNEA_AI_USAGE) | citire |
-| S1-R3 | Jurnal AI pentru etapa 1 | [ai-log/etapa-01.md](AICI_PUI_PERMALINK_CATRE_FISIERUL_JURNAL) | citire |
-| S1-R4 | antet, formular (text + select), 3 carduri cu datele temei | [index.html#L10-L55](AICI_PUI_PERMALINK_CATRE_MAIN_DIN_HTML) | deschidere pagină |
-| S1-R5 | cardul finalizat arată diferit | [style.css#L115-L118](AICI_PUI_PERMALINK_CATRE_CLASA_DONE_DIN_CSS) | vizualizare card |
-| S1-R6 | 2 coloane pe desktop, 1 sub 700px | [style.css#L131-L135](AICI_PUI_PERMALINK_CATRE_MEDIA_QUERY_GRID) | redimensionare < 700px |
-| S1-R7 | focus vizibil, temă întunecată lizibilă | [style.css#L125-L128_SI_L138-L150](AICI_PUI_PERMALINK_CATRE_FOCUS_SI_DARK_MODE) | Tab; dark mode |
-| S1-R8 | commit "Etapa 1: Mockup HTML si CSS" publicat (pushed) | [Link către commit](AICI_PUI_LINK_CATRE_COMMITUL_TAU) | istoric commit-uri |
+| S1-R1 | README: descriere, câmpuri, date de test, rulare | [README.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/main/README.md) | citire |
+| S1-R2 | Secțiunea AI usage | [README.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/main/README.md) | citire |
+| S1-R3 | Jurnal AI pentru etapa 1 | [ai-log/etapa-01.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/main/ai-log/etapa-01.md) | citire |
+| S1-R4 | antet, formular (text + select), 3 carduri cu datele temei | [index.html#L10-L55](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/1cac591ef32dce6bc025329259bf1b534f5ca7db/index.html#L10-L62) | deschidere pagină |
+| S1-R5 | cardul finalizat arată diferit | [style.css#L115-L118](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/1cac591ef32dce6bc025329259bf1b534f5ca7db/style.css#L109-L153) | vizualizare card |
+| S1-R6 | 2 coloane pe desktop, 1 sub 700px | [style.css#L131-L135](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/1cac591ef32dce6bc025329259bf1b534f5ca7db/style.css#L170-L174) | redimensionare < 700px |
+| S1-R7 | focus vizibil, temă întunecată lizibilă | [style.css#L125-L128_SI_L138-L150](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/1cac591ef32dce6bc025329259bf1b534f5ca7db/style.css#L177-L190) | Tab; dark mode |
+| S1-R8 | commit "Etapa 1: Mockup HTML si CSS" publicat (pushed) | [Link către commit](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/commit/1cac591ef32dce6bc025329259bf1b534f5ca7db) | istoric commit-uri |
