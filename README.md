@@ -25,19 +25,25 @@ Details per stage:
 - Stage 2: Used Gemini to generate the immutable array functions in JavaScript. See `ai-log/etapa-02.md`.
 
 ## How to run
-Open `index.html` in a browser. Press F12 (Console) to view the JavaScript function results. No build step, no server.
+cd frontend
+npm install
+npm run dev
+Then open the address printed in the terminal (http://localhost:5173).
 
 ## Stage 2: data logic
 Plain JavaScript, no DOM. `jocuri.js` holds the array and the functions that read and change it. Results are printed in the browser console (F12).
 
+## Stage 3: Vite and React project
+The app now lives in `frontend/`, built with Vite. The data from stage 2 moved into the main component; the list is still printed raw.
+
 ## Status
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
-- [ ] Stage 3: Vite and React project
+- [x] Stage 3: Vite and React project
 
 ---
 
-## Tabel de verificare Etapa 1
+## Stage 1 Checklist
 
 | ID | Requirement | Where (permalink) | How to check |
 | :--- | :--- | :--- | :--- |
@@ -50,7 +56,7 @@ Plain JavaScript, no DOM. `jocuri.js` holds the array and the functions that rea
 | S1-R7 | visible focus, readable dark theme | [style.css#L125-L128_SI_L138-L150](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/1cac591ef32dce6bc025329259bf1b534f5ca7db/style.css#L177-L190) | Tab; dark mode |
 | S1-R8 | commit "Etapa 1: Mockup HTML si CSS" pushed | [Link către commit](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/commit/1cac591ef32dce6bc025329259bf1b534f5ca7db) | commit history |
 
-## Tabel de verificare Etapa 2
+## Stage 2 Checklist
 
 | ID | Requirement | Where (permalink) | How to check |
 | :--- | :--- | :--- | :--- |
@@ -61,3 +67,15 @@ Plain JavaScript, no DOM. `jocuri.js` holds the array and the functions that rea
 | S2-R5 | original array unchanged after add | [jocuri.js#L76](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/21d54b26113de844dea46ad9fdb60174c4c48e77/jocuri.js#L78) | console line |
 | S2-R6 | README Stage 2 section + AI log | [README.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/21d54b26113de844dea46ad9fdb60174c4c48e77/README.md?plain=1#L30-L31) și [etapa-02.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/21d54b26113de844dea46ad9fdb60174c4c48e77/ai-log/etapa-02.md?plain=1#L1-L16) | read |
 | S2-R7 | commit "Stage 2" pushed | [Link către commit](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/commit/21d54b26113de844dea46ad9fdb60174c4c48e77) | commit history |
+
+
+## Stage 3 Checklist
+| ID | Requirement | Where (permalink) | How to check |
+| :--- | :--- | :--- | :--- |
+| S3-R1 | npm run dev starts without errors | [frontend/package.json](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/df9f9b3e98c471d1d96ec3bb7123155def4e85d2/frontend/package.json#L1-L27) | npm install, npm run dev |
+| S3-R2 | app name and counter computed from data | [frontend/src/App.jsx#L13-L17](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/df9f9b3e98c471d1d96ec3bb7123155def4e85d2/frontend/src/App.jsx#L13-L17) | edit data, save |
+| S3-R3 | data from README, not from the example | [frontend/src/App.jsx#L1-L5](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/df9f9b3e98c471d1d96ec3bb7123155def4e85d2/frontend/src/App.jsx#L1-L5) | compare with README |
+| S3-R4 | stage 1 styles reused | [frontend/src/App.css](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/df9f9b3e98c471d1d96ec3bb7123155def4e85d2/frontend/src/App.css#L1-L192) | look at the page |
+| S3-R5 | node_modules ignored, build passes | [frontend/.gitignore](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/df9f9b3e98c471d1d96ec3bb7123155def4e85d2/frontend/.gitignore#L1-L24) | npm run build |
+| S3-R6 | README Stage 3 section + AI log | [README.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/df9f9b3e98c471d1d96ec3bb7123155def4e85d2/README.md?plain=1#L1-L63) and [ai-log/etapa-03.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/df9f9b3e98c471d1d96ec3bb7123155def4e85d2/ai-log/etapa-03.md?plain=1#L1-L16) | read |
+| S3-R7 | commit "Stage 3" pushed | [Link to commit](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/commit/df9f9b3e98c471d1d96ec3bb7123155def4e85d2) | commit history |

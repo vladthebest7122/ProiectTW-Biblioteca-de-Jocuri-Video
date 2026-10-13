@@ -4,7 +4,7 @@
 - Gemini
 
 ## Conversații
-Link conversație: [Pune aici link-ul de "Share" generat de platformă] (Generare mockup HTML/CSS și configurare temă)
+Link conversație: https://share.gemini.google/YYLJpDgvNKe2
 
 ## Solicitări principale
 ### 1. Generare cod complet pentru Etapa 1

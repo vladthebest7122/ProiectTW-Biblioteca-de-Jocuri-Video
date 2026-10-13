@@ -4,7 +4,7 @@
 - Gemini
 
 ## Conversații
-Link conversație: [Pune aici link-ul de "Share" al acestei conversații] (Generare logică date JavaScript)
+Link conversație: https://share.gemini.google/YYLJpDgvNKe2
 
 ## Solicitări principale
 ### 1. Generare logică imutabilă pentru Date (Array de obiecte)
