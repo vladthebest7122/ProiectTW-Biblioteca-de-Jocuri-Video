@@ -86,3 +86,14 @@ The list is rendered from the data, through two components:
 | S3-R5 | node_modules ignored, build passes | [frontend/.gitignore](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/df9f9b3e98c471d1d96ec3bb7123155def4e85d2/frontend/.gitignore#L1-L24) | npm run build |
 | S3-R6 | README Stage 3 section + AI log | [README.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/df9f9b3e98c471d1d96ec3bb7123155def4e85d2/README.md?plain=1#L1-L63) and [ai-log/etapa-03.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/df9f9b3e98c471d1d96ec3bb7123155def4e85d2/ai-log/etapa-03.md?plain=1#L1-L16) | read |
 | S3-R7 | commit "Stage 3" pushed | [Link to commit](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/commit/df9f9b3e98c471d1d96ec3bb7123155def4e85d2) | commit history |
+
+## Stage 4 Checklist
+| ID | Requirement | Where (permalink) | How to check |
+| :--- | :--- | :--- | :--- |
+| S4-R1 | 2+ components in src/components/ | [frontend/src/components/](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/tree/main/frontend/src/components) | open folder |
+| S4-R2 | card receives data through props | [frontend/src/components/JocCard.jsx#L3-L5](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/0bd5b84924cbedcdb9fb7e1dc7d6a4bb4de27ef7/frontend/src/components/JocCard.jsx#L4-L6) | read |
+| S4-R3 | map + key={id}, no console warnings | [frontend/src/components/JocList.jsx#L10-L14](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/0bd5b84924cbedcdb9fb7e1dc7d6a4bb4de27ef7/frontend/src/components/JocList.jsx#L10-L14) | F12, Console |
+| S4-R4 | message for empty list | [frontend/src/components/JocList.jsx#L4-L6](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/0bd5b84924cbedcdb9fb7e1dc7d6a4bb4de27ef7/frontend/src/components/JocList.jsx#L4-L7) | set array to [] |
+| S4-R5 | state changes the card look | [frontend/src/components/JocCard.jsx#L6](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/0bd5b84924cbedcdb9fb7e1dc7d6a4bb4de27ef7/frontend/src/components/JocCard.jsx#L6) | toggle a done flag |
+| S4-R6 | README Stage 4 section + AI log | [README.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/0bd5b84924cbedcdb9fb7e1dc7d6a4bb4de27ef7/README.md?plain=1#L1-L88) and [ai-log/etapa-04.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/0bd5b84924cbedcdb9fb7e1dc7d6a4bb4de27ef7/ai-log/etapa-04.md?plain=1#L1-L16) | read |
+| S4-R7 | commit "Stage 4" pushed | [Link to commit](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/commit/2c3fa23c7861f595cd4e746de1a9e606898b617b) | commit history |
