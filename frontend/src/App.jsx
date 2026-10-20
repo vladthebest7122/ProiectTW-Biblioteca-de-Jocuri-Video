@@ -1,3 +1,5 @@
+import JocList from "./components/JocList.jsx";
+
 const jocuri = [
   { id: 1, titlu: "The Witcher 3", terminat: true, platforma: "pc" },
   { id: 2, titlu: "God of War", terminat: false, platforma: "playstation" },
@@ -20,8 +22,7 @@ export default function App() {
       <main className="container">
         <section className="panel">
           <h2>Jocurile mele</h2>
-          {/* Temporar: date brute; componentele apar in Etapa 4 */}
-          <pre>{JSON.stringify(jocuri, null, 2)}</pre>
+          <JocList jocuri={jocuri} />
         </section>
       </main>
     </>
