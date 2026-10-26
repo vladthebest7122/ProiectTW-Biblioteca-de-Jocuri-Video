@@ -41,12 +41,16 @@ The list is rendered from the data, through two components:
 `JocList` receives the whole array and renders one card per item.
 `JocCard` receives a single item through props and displays it.
 
+## Stage 5: local state and events
+The list lives in React state. Checking and deleting work from the page, and the counters in the header follow automatically. A button in the header switches between light and dark mode. Changes are lost on refresh, which is what stage 6 and stage 10 fix.
+
 ## Status
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
 - [x] Stage 3: Vite and React project
 - [x] Stage 4: components rendered from data
-- [ ] Stage 5: local state and events
+- [x] Stage 5: local state and events
+- [ ] Stage 6: loading data from a mock API
 
 ---
 
@@ -97,3 +101,15 @@ The list is rendered from the data, through two components:
 | S4-R5 | state changes the card look | [frontend/src/components/JocCard.jsx#L6](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/0bd5b84924cbedcdb9fb7e1dc7d6a4bb4de27ef7/frontend/src/components/JocCard.jsx#L6) | toggle a done flag |
 | S4-R6 | README Stage 4 section + AI log | [README.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/0bd5b84924cbedcdb9fb7e1dc7d6a4bb4de27ef7/README.md?plain=1#L1-L88) and [ai-log/etapa-04.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/0bd5b84924cbedcdb9fb7e1dc7d6a4bb4de27ef7/ai-log/etapa-04.md?plain=1#L1-L16) | read |
 | S4-R7 | commit "Stage 4" pushed | [Link to commit](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/commit/2c3fa23c7861f595cd4e746de1a9e606898b617b) | commit history |
+
+## Stage 5 Checklist
+| ID | Requirement | Where (permalink) | How to check |
+| :--- | :--- | :--- | :--- |
+| S5-R1 | list kept in useState, in App | [frontend/src/App.jsx#L17](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/d69a2c3a43212eb20fbf474b444e615fc4176a25/frontend/src/App.jsx#L17) | read |
+| S5-R2 | toggling changes state and card look | [frontend/src/App.jsx#L21-L25](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/d69a2c3a43212eb20fbf474b444e615fc4176a25/frontend/src/App.jsx#L21-L25) and [frontend/src/components/JocCard.jsx#L15-L19](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/d69a2c3a43212eb20fbf474b444e615fc4176a25/frontend/src/components/JocCard.jsx#L15-L19) | click a checkbox |
+| S5-R3 | delete removes the item | [frontend/src/App.jsx#L28-L30](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/d69a2c3a43212eb20fbf474b444e615fc4176a25/frontend/src/App.jsx#L28-L30) and [frontend/src/components/JocCard.jsx#L32-L34](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/d69a2c3a43212eb20fbf474b444e615fc4176a25/frontend/src/components/JocCard.jsx#L30-L34) | click Delete |
+| S5-R4 | header counter derived, not in state | [frontend/src/App.jsx#L41](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/d69a2c3a43212eb20fbf474b444e615fc4176a25/frontend/src/App.jsx#L40) | toggle, watch header |
+| S5-R5 | immutable updates | [frontend/src/App.jsx#L21-L30](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/d69a2c3a43212eb20fbf474b444e615fc4176a25/frontend/src/App.jsx#L21-L30) | read |
+| S5-R6 | light/dark toggle: state + html attr | [frontend/src/App.jsx#L33-L38](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/d69a2c3a43212eb20fbf474b444e615fc4176a25/frontend/src/App.jsx#L33-L37) and [frontend/src/App.css#L22-L41](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/d69a2c3a43212eb20fbf474b444e615fc4176a25/frontend/src/App.css#L25-L37) | click button, test themes |
+| S5-R7 | no console warnings; logs | [README.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/d69a2c3a43212eb20fbf474b444e615fc4176a25/README.md?plain=1#L1-L99) and [ai-log/etapa-05.md](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/blob/d69a2c3a43212eb20fbf474b444e615fc4176a25/ai-log/etapa-05.md?plain=1#L1-L16) | F12, Console |
+| S5-R8 | commit "Stage 5" pushed | [Link to commit](https://github.com/vladthebest7122/ProiectTW-Biblioteca-de-Jocuri-Video/commit/81c3ab72f6f60b22a8aa56a9a36f04e51b648316) | commit history |
