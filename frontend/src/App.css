@@ -317,3 +317,38 @@ body {
   color: #fff; 
   box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
 }
+
+/* ================= STĂRI ÎNCĂRCARE/EROARE ETAPA 6 ================= */
+.info { 
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: var(--text-muted); 
+  font-weight: 600;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.15);
+}
+
+.error code {
+  background: rgba(239, 68, 68, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}

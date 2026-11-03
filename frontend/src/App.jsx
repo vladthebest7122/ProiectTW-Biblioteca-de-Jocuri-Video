@@ -1,42 +1,53 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import JocList from "./components/JocList.jsx";
+import { fetchJocuri } from "./api.js";
 
-// Datele de pornire, cu imaginile tale
-const JOCURI_INITIALE = [
-  { id: 1, titlu: "The Witcher 3", terminat: true, platforma: "pc", imagine: "/witcher3.jpg" },
-  { id: 2, titlu: "God of War", terminat: false, platforma: "playstation", imagine: "/godofwar.jpg" },
-  { id: 3, titlu: "Halo Infinite", terminat: false, platforma: "xbox", imagine: "/halo.jpg" }
-];
-
-// Verificăm tema sistemului
 function temaInitiala() {
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
 export default function App() {
-  const [jocuri, setJocuri] = useState(JOCURI_INITIALE);
+  // State-urile componentei: 
+  const [jocuri, setJocuri] = useState([]); // pleacă goală
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [tema, setTema] = useState(temaInitiala);
 
-  // Funcție imutabilă pentru comutarea statusului
+  // Descărcarea datelor la deschiderea paginii
+  useEffect(() => {
+    let ignore = false;
+    
+    async function load() {
+      try {
+        const data = await fetchJocuri();
+        if (!ignore) setJocuri(data);
+      } catch (err) {
+        if (!ignore) setError(err.message);
+      } finally {
+        if (!ignore) setLoading(false);
+      }
+    }
+    
+    load();
+    return () => { ignore = true; };
+  }, []);
+
   function handleToggle(id) {
     setJocuri((prev) =>
       prev.map((j) => (j.id === id ? { ...j, terminat: !j.terminat } : j))
     );
   }
 
-  // Funcție imutabilă pentru ștergere
   function handleDelete(id) {
     setJocuri((prev) => prev.filter((j) => j.id !== id));
   }
 
-  // Comutarea temei
   function handleTema() {
     const noua = tema === "dark" ? "light" : "dark";
     setTema(noua);
     document.documentElement.dataset.theme = noua;
   }
 
-  // Valoare derivată: numărăm jocurile neterminate la fiecare randare
   const neterminate = jocuri.filter((j) => !j.terminat).length;
 
   return (
@@ -60,11 +71,22 @@ export default function App() {
       <main className="container">
         <section className="panel">
           <h2>Jocurile mele</h2>
-          <JocList 
-            jocuri={jocuri} 
-            onToggle={handleToggle} 
-            onDelete={handleDelete} 
-          />
+          
+          {loading && <p className="info">Se încarcă lista de jocuri...</p>}
+          
+          {error && (
+            <p className="error">
+              Nu am putut încărca datele: {error}. Rulează <code>npm run api</code>?
+            </p>
+          )}
+          
+          {!loading && !error && (
+            <JocList 
+              jocuri={jocuri} 
+              onToggle={handleToggle} 
+              onDelete={handleDelete} 
+            />
+          )}
         </section>
       </main>
     </>
