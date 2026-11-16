@@ -2,7 +2,7 @@ import JocCard from "./JocCard.jsx";
 
 export default function JocList({ jocuri, onToggle, onDelete }) {
   if (jocuri.length === 0) {
-    return <p className="empty">Nu există niciun joc adăugat.</p>;
+    return <p className="empty" data-testid="empty">Nu există niciun joc adăugat.</p>;
   }
 
   return (

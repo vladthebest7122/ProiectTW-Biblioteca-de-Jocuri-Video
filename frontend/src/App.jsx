@@ -1,19 +1,18 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import JocList from "./components/JocList.jsx";
-import { fetchJocuri } from "./api.js";
+import JocForm from "./components/JocForm.jsx";
+import { fetchJocuri, createJoc, updateJoc, deleteJoc } from "./api.js";
 
 function temaInitiala() {
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
 export default function App() {
-  // State-urile componentei: 
-  const [jocuri, setJocuri] = useState([]); // pleacă goală
+  const [jocuri, setJocuri] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [tema, setTema] = useState(temaInitiala);
 
-  // Descărcarea datelor la deschiderea paginii
   useEffect(() => {
     let ignore = false;
     
@@ -32,14 +31,31 @@ export default function App() {
     return () => { ignore = true; };
   }, []);
 
-  function handleToggle(id) {
-    setJocuri((prev) =>
-      prev.map((j) => (j.id === id ? { ...j, terminat: !j.terminat } : j))
-    );
+  // Adăugarea direct în server
+  async function handleAdd(joc) {
+    const creat = await createJoc(joc);
+    setJocuri((prev) => [...prev, creat]);
   }
 
-  function handleDelete(id) {
-    setJocuri((prev) => prev.filter((j) => j.id !== id));
+  // Modificare (Bifare) pe server
+  async function handleToggle(id) {
+    const joc = jocuri.find((j) => j.id === id);
+    try {
+      const actualizat = await updateJoc(id, { terminat: !joc.terminat });
+      setJocuri((prev) => prev.map((j) => (j.id === id ? actualizat : j)));
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
+  // Ștergere de pe server
+  async function handleDelete(id) {
+    try {
+      await deleteJoc(id);
+      setJocuri((prev) => prev.filter((j) => j.id !== id));
+    } catch (err) {
+      setError(err.message);
+    }
   }
 
   function handleTema() {
@@ -53,11 +69,7 @@ export default function App() {
   return (
     <>
       <header className="app-header">
-        <button 
-          className="theme-toggle" 
-          onClick={handleTema}
-          aria-pressed={tema === "dark"}
-        >
+        <button className="theme-toggle" onClick={handleTema} aria-pressed={tema === "dark"}>
           {tema === "dark" ? "Mod luminos" : "Mod întunecat"}
         </button>
         
@@ -70,17 +82,18 @@ export default function App() {
 
       <main className="container">
         <section className="panel">
+          <h2>Adaugă joc</h2>
+          <JocForm onAdd={handleAdd} />
+        </section>
+
+        <section className="panel">
           <h2>Jocurile mele</h2>
           
-          {loading && <p className="info">Se încarcă lista de jocuri...</p>}
+          {loading && <p className="info" data-testid="loading">Se încarcă...</p>}
           
-          {error && (
-            <p className="error">
-              Nu am putut încărca datele: {error}. Rulează <code>npm run api</code>?
-            </p>
-          )}
+          {error && <p className="error" data-testid="error">{error}</p>}
           
-          {!loading && !error && (
+          {!loading && (
             <JocList 
               jocuri={jocuri} 
               onToggle={handleToggle} 
