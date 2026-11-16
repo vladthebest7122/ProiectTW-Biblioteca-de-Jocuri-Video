@@ -19,7 +19,7 @@ export default function JocForm({ onAdd }) {
   }
 
   async function handleSubmit(e) {
-    e.preventDefault(); // Oprește reîncărcarea paginii
+    e.preventDefault();
 
     const mesaj = valideaza();
     if (mesaj) {
@@ -31,7 +31,6 @@ export default function JocForm({ onAdd }) {
     setTrimite(true);
 
     try {
-      // Dacă utilizatorul nu a pus o imagine, folosim un gradient default frumos
       const imagineFinala = imagine.trim() === "" ? "/default-game.jpg" : imagine.trim();
       
       await onAdd({ 
@@ -41,7 +40,6 @@ export default function JocForm({ onAdd }) {
         imagine: imagineFinala 
       });
       
-      // Golim câmpurile doar dacă a funcționat
       setTitlu("");
       setPlatforma("pc");
       setImagine("");
@@ -75,9 +73,7 @@ export default function JocForm({ onAdd }) {
           data-testid="form-platforma"
         >
           {PLATFORME.map((p) => (
-            <option key={p.value} value={p.value}>
-              {p.label}
-            </option>
+            <option key={p.value} value={p.value}>{p.label}</option>
           ))}
         </select>
       </label>
@@ -88,17 +84,13 @@ export default function JocForm({ onAdd }) {
           type="text"
           value={imagine}
           onChange={(e) => setImagine(e.target.value)}
-          placeholder="Ex: /numeJoc.jpg"
+          placeholder="Ex: /hades.jpg (Lasă gol pt. implicit)"
         />
       </label>
 
-      {eroare && (
-        <p className="error" style={{ padding: "10px", marginTop: "10px" }} data-testid="form-error">
-          {eroare}
-        </p>
-      )}
+      {eroare && <p className="error" data-testid="form-error">{eroare}</p>}
 
-      <button type="submit" disabled={trimite} data-testid="form-submit" style={{ marginTop: "10px" }}>
+      <button type="submit" disabled={trimite} data-testid="form-submit">
         {trimite ? "Se salvează..." : "Adaugă jocul"}
       </button>
     </form>

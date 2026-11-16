@@ -22,15 +22,19 @@ export default function Layout() {
   return (
     <>
       <header className={styles.header}>
-        <button className={styles.themeToggle} onClick={handleTema} aria-pressed={tema === "dark"}>
-          {tema === "dark" ? "Mod luminos" : "Mod întunecat"}
-        </button>
         <div className={styles.inner}>
           <span className={styles.logo}>GameVault</span>
-          <nav className={styles.nav} data-testid="nav">
-            <NavLink to="/" end className={navClass}>Jocuri</NavLink>
-            <NavLink to="/despre" className={navClass}>Despre</NavLink>
-          </nav>
+          
+          <div className={styles.rightControls}>
+            <nav className={styles.nav} data-testid="nav">
+              <NavLink to="/" end className={navClass}>Jocuri</NavLink>
+              <NavLink to="/despre" className={navClass}>Despre</NavLink>
+            </nav>
+            <button className={styles.themeToggle} onClick={handleTema} aria-pressed={tema === "dark"}>
+              {tema === "dark" ? "Mod luminos" : "Mod întunecat"}
+            </button>
+          </div>
+
         </div>
       </header>
       <main className={styles.main}>
