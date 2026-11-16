@@ -48,6 +48,9 @@ The list lives in React state. Checking and deleting work from the page, and the
 ## Stage 6: data from a mock API
 The list is served by json-server from `db.json`. The app fetches it on load and shows a loading state and an error state.
 
+## Stage 7: form and validation
+Tasks can be added from the page. The form is controlled and validated, and every change (add, toggle, delete) goes to the API before it shows up in the list.
+
 ## Status
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
@@ -55,7 +58,8 @@ The list is served by json-server from `db.json`. The app fetches it on load and
 - [x] Stage 4: components rendered from data
 - [x] Stage 5: local state and events
 - [x] Stage 6: loading data from a mock API
-- [ ] Stage 7: form and validation
+- [x] Stage 7: form and validation
+- [ ] Stage 8: routing and detail page
 
 ---
 
