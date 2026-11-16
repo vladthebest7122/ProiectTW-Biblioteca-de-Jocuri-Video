@@ -1,11 +1,6 @@
 import { useState } from "react";
-
-const PLATFORME = [
-  { value: "pc", label: "PC" },
-  { value: "playstation", label: "PlayStation" },
-  { value: "xbox", label: "Xbox" },
-  { value: "switch", label: "Switch" },
-];
+import { PLATFORME } from "../constants.js";
+import styles from "./JocForm.module.css";
 
 const TITLU_MAX = 100;
 
@@ -58,7 +53,7 @@ export default function JocForm({ onAdd }) {
   }
 
   return (
-    <form className="item-form" onSubmit={handleSubmit} noValidate data-testid="form">
+    <form className={styles.form} onSubmit={handleSubmit} noValidate data-testid="form">
       <label>
         Titlul jocului
         <input

@@ -33,3 +33,7 @@ export function updateJoc(id, changes) {
 export function deleteJoc(id) {
   return request(`/jocuri/${id}`, { method: "DELETE" });
 }
+
+export function fetchJoc(id) {
+  return request(`/jocuri/${id}`);
+}
