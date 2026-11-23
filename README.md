@@ -16,20 +16,34 @@ Sample data used across all stages:
 3. Halo Infinite, active, Xbox
 
 ## AI usage
-| Tool | Used for |
-| --- | --- |
-| Gemini | Stage 1: HTML/CSS mockup and README. Stage 2: JavaScript data logic |
+| Stage | Tool | Used for |
+| --- | --- | --- |
+| Stage 1 | Gemini | Initial HTML/CSS static mockup and Markdown documentation. |
+| Stage 2 | Gemini | Immutable array functions and data logic in JavaScript. |
+| Stage 3 | Gemini | Vite + React project initialization and adapting the mockup to JSX. |
+| Stage 4 | Gemini | Extracting reusable React components (`JocList`, `JocCard`) and custom Glassmorphism styling with background images. |
+| Stage 5 | Gemini | Local state (`useState`), interactive toggle/delete events, and manual light/dark mode switch. |
+| Stage 6 | Gemini | `json-server` mock API setup, `api.js`, and loading/error states with `useEffect`. |
+| Stage 7 | Gemini | Controlled form (`JocForm`) with validation, full CRUD API actions, `tw.json`, and `data-testid` attributes. |
+| Stage 8 | Gemini | React Router setup (list, detail, about, 404 pages), shared `Layout`, and CSS Modules migration. |
+| Stage 9 | Gemini | Node.js and Express backend, REST routes, server-side validation, CORS configuration, and removing `json-server`. |
 
 Details per stage:
 - Stage 1: Used Gemini to generate the initial HTML, CSS, and Markdown files. See `ai-log/etapa-01.md`.
-- Stage 2: Used Gemini to generate the immutable array functions in JavaScript. See `ai-log/etapa-02.md`.
+- Stage 2: Used Gemini to implement the immutable array functions in JavaScript. See `ai-log/etapa-02.md`.
+- Stage 3: Used Gemini to initialize the Vite + React project and adapt the mockup to JSX. See `ai-log/etapa-03.md`.
+- Stage 4: Used Gemini to extract reusable React components (`JocList`, `JocCard`) and create custom Glassmorphism styling with background images. See `ai-log/etapa-04.md`.
+- Stage 5: Used Gemini to implement local state (`useState`), interactive toggle/delete events, and a manual light/dark mode switch. See `ai-log/etapa-05.md`.
+- Stage 6: Used Gemini to configure `json-server`, create `api.js`, and handle loading and error states with `useEffect`. See `ai-log/etapa-06.md`.
+- Stage 7: Used Gemini to build the controlled form (`JocForm`) with validation, connect full CRUD actions to the API, and add `tw.json` and `data-testid` attributes. See `ai-log/etapa-07.md`.
+- Stage 8: Used Gemini to set up React Router (list, detail, about, and 404 pages), create a shared `Layout`, and migrate styles to CSS Modules. See `ai-log/etapa-08.md`.
+- Stage 9: Used Gemini to build the Node.js and Express backend, implement REST routes with server-side validation and CORS, and remove `json-server`. See `ai-log/etapa-09.md`.
 
 ## How to run
-# terminal 1, http://localhost:3001
-npm run api
-
-# terminal 2, http://localhost:5173
-npm run dev
+```bash
+cd backend && npm install && npm run dev   # terminal 1, port 3001
+cd frontend && npm install && npm run dev  # terminal 2, port 5173
+```
 
 ## Stage 2: data logic
 Plain JavaScript, no DOM. `jocuri.js` holds the array and the functions that read and change it. Results are printed in the browser console (F12).
@@ -54,6 +68,9 @@ Tasks can be added from the page. The form is controlled and validated, and ever
 ## Stage 8: routing and detail page
 Three pages behind React Router: the list, a detail page at `/jocuri/:id`, and an about page, plus a 404 page. Component styles moved to CSS Modules.
 
+## Stage 9: own backend
+`json-server` is gone. The API is an Express server in `backend/`, with REST routes, server-side validation and CORS. Data is still kept in memory and resets on restart.
+
 ## Status
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
@@ -63,7 +80,8 @@ Three pages behind React Router: the list, a detail page at `/jocuri/:id`, and a
 - [x] Stage 6: loading data from a mock API
 - [x] Stage 7: form and validation
 - [x] Stage 8: routing and detail page
-- [ ] Stage 9: own backend with Express
+- [x] Stage 9: own backend with Express
+- [ ] Stage 10: MariaDB and full CRUD
 
 ---
 
